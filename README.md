@@ -4,7 +4,7 @@ GDP per person here is adjusted for differences in prices between countries (pur
 
 ## What stands out
 
-Since 1950, more than four in ten countries have fallen further behind the United States. Of the 145 countries with Maddison estimates for both 1950 and 2022, 63 (including three former states; 63 of 142 without them) had a lower GDP per person relative to the US in 2022 than in 1950. A few raced ahead: South Korea went from 6.5% of the US level (998 against 15,240 international dollars of 2011) to 70.6% (41,321 against 58,487), and Taiwan from 9.6% to 90.9%. In 1950 Ghana was richer per person than South Korea (1,788 against 998); by 2022 South Korea was 9.7 times richer (41,321 against 4,242), and Ghana had slipped from 11.7% of the US level to 7.3%. These are shares of the US level, not falls in absolute income: Ghana's GDP per person more than doubled over the period.
+Since 1950, more than four in ten countries have fallen further behind the United States in GDP per person, relative to the US. Of the 145 countries with Maddison estimates for both 1950 and 2022, 63 (including three former states; 63 of 142 without them) had a lower GDP per person relative to the US in 2022 than in 1950. A few raced ahead: South Korea went from 6.5% of the US level (998 against 15,240 international dollars of 2011) to 70.6% (41,321 against 58,487), and Taiwan from 9.6% to 90.9%. In 1950 Ghana was richer per person than South Korea (1,788 against 998); by 2022 South Korea was 9.7 times richer (41,321 against 4,242), and Ghana had slipped from 11.7% of the US level to 7.3%. These are shares of the US level, not falls in absolute income: Ghana's GDP per person more than doubled over the period.
 
 ## Data
 
