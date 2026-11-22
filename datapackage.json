@@ -1,0 +1,200 @@
+{
+  "name": "gdp-per-capita-long-run",
+  "title": "GDP per Capita over the Long Run (Maddison Project 2023 and Penn World Table 11.0)",
+  "description": "Real GDP per person and population by country and year, for comparing living standards across countries and over long periods. The main series is the Maddison Project Database 2023 (Bolt and van Zanden): 169 countries, in 2011 international dollars, with estimates for year 1 for 14 countries, 1820 for 55, 1950 for 146 and 2022 for all 169, plus Maddison's regional and world aggregates. A second file gives Penn World Table 11.0 (Feenstra, Inklaar and Timmer) real GDP per person at chained PPPs in 2021 US dollars, 185 countries, 1950-2023. The two sources differ by design and should not be mixed in one series. Frozen snapshot of the 2023 and 11.0 releases.",
+  "status": "structured",
+  "version": "1.0.0",
+  "keywords": [
+    "gdp",
+    "gdp per capita",
+    "economic growth",
+    "economic history",
+    "maddison",
+    "penn world table",
+    "ppp",
+    "living standards",
+    "population",
+    "convergence"
+  ],
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0. Maddison Project Database, version 2023 by Jutta Bolt and Jan Luiten van Zanden, and Penn World Table 11.0 by Robert C. Feenstra, Robert Inklaar and Marcel P. Timmer, are each licensed under CC BY 4.0 (as stated on their GGDC release pages).",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Maddison Project Database 2023, Groningen Growth and Development Centre (Bolt and van Zanden 2024, Journal of Economic Surveys, doi:10.1111/joes.12618)",
+      "path": "https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2023"
+    },
+    {
+      "title": "Maddison Project Database 2023 on DataverseNL (doi:10.34894/INZBF2)",
+      "path": "https://doi.org/10.34894/INZBF2"
+    },
+    {
+      "title": "Penn World Table 11.0, Groningen Growth and Development Centre (Feenstra, Inklaar and Timmer 2015, American Economic Review 105(10))",
+      "path": "https://www.rug.nl/ggdc/productivity/pwt/"
+    },
+    {
+      "title": "Penn World Table 11.0 on DataverseNL (doi:10.34894/FABVLR)",
+      "path": "https://doi.org/10.34894/FABVLR"
+    }
+  ],
+  "upkeep": {
+    "mode": "frozen",
+    "snapshot": "2026-11-22"
+  },
+  "resources": [
+    {
+      "path": "data/maddison-gdp-per-capita.csv",
+      "name": "maddison-gdp-per-capita",
+      "title": "Maddison Project 2023: GDP per capita and population by country and year",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "country_code",
+            "type": "string",
+            "description": "Three-letter country code as used by the Maddison Project: ISO 3166-1 alpha-3, plus former states CSK (Czechoslovakia), SUN (Former USSR) and YUG (Former Yugoslavia). SDN is Sudan before the 2011 split and TZA is mainland Tanzania."
+          },
+          {
+            "name": "country",
+            "type": "string",
+            "description": "Country name as given by the Maddison Project."
+          },
+          {
+            "name": "year",
+            "type": "integer",
+            "description": "Calendar year. Before 1820 only scattered benchmark years exist; most countries are annual from 1950."
+          },
+          {
+            "name": "gdp_per_capita",
+            "type": "number",
+            "description": "Real GDP per capita in 2011 international dollars (2011 PPPs), rounded to cents. Empty where the Maddison Project gives population but no GDP estimate."
+          },
+          {
+            "name": "population",
+            "type": "integer",
+            "description": "Mid-year population, persons (the source gives thousands, here multiplied by 1,000 and rounded). Empty where there is no estimate."
+          },
+          {
+            "name": "region",
+            "type": "string",
+            "description": "Maddison Project region the country belongs to.",
+            "constraints": {
+              "enum": [
+                "East Asia",
+                "Eastern Europe",
+                "Latin America",
+                "Middle East and North Africa",
+                "South and South East Asia",
+                "Sub Saharan Africa",
+                "Western Europe",
+                "Western Offshoots"
+              ]
+            }
+          }
+        ],
+        "primaryKey": [
+          "country_code",
+          "year"
+        ]
+      }
+    },
+    {
+      "path": "data/maddison-regions.csv",
+      "name": "maddison-regions",
+      "title": "Maddison Project 2023: regional and world GDP per capita and population",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "region",
+            "type": "string",
+            "description": "Maddison Project region, or World.",
+            "constraints": {
+              "enum": [
+                "East Asia",
+                "Eastern Europe",
+                "Latin America",
+                "Middle East and North Africa",
+                "South and South East Asia",
+                "Sub Saharan Africa",
+                "Western Europe",
+                "Western Offshoots",
+                "World"
+              ]
+            }
+          },
+          {
+            "name": "year",
+            "type": "integer",
+            "description": "Calendar year: every 10 years 1820-2010, then annual 2015-2022."
+          },
+          {
+            "name": "gdp_per_capita",
+            "type": "number",
+            "description": "Real GDP per capita in 2011 international dollars, as computed by the Maddison Project from the country estimates available. Empty where not given."
+          },
+          {
+            "name": "population",
+            "type": "integer",
+            "description": "Population, persons (source thousands times 1,000, rounded). Given only for some years before 1950."
+          }
+        ],
+        "primaryKey": [
+          "region",
+          "year"
+        ]
+      }
+    },
+    {
+      "path": "data/pwt-gdp-per-capita.csv",
+      "name": "pwt-gdp-per-capita",
+      "title": "Penn World Table 11.0: real GDP per capita at chained PPPs, 1950-2023",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "country_code",
+            "type": "string",
+            "description": "ISO 3166-1 alpha-3 country code, as in PWT."
+          },
+          {
+            "name": "country",
+            "type": "string",
+            "description": "Country name as given in PWT."
+          },
+          {
+            "name": "year",
+            "type": "integer",
+            "description": "Calendar year, 1950-2023."
+          },
+          {
+            "name": "rgdpe_per_capita",
+            "type": "number",
+            "description": "Expenditure-side real GDP at chained PPPs per person, 2021 US dollars (PWT rgdpe divided by pop). PWT recommends this for comparing living standards across countries and over time."
+          },
+          {
+            "name": "rgdpo_per_capita",
+            "type": "number",
+            "description": "Output-side real GDP at chained PPPs per person, 2021 US dollars (PWT rgdpo divided by pop). Measures productive capacity; differs from rgdpe mainly through terms of trade."
+          },
+          {
+            "name": "population",
+            "type": "integer",
+            "description": "Population, persons (PWT pop in millions times 1,000,000, rounded)."
+          }
+        ],
+        "primaryKey": [
+          "country_code",
+          "year"
+        ]
+      }
+    }
+  ]
+}
