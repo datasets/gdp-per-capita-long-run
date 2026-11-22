@@ -4,7 +4,7 @@ GDP per person here is adjusted for differences in prices between countries (pur
 
 ## What stands out
 
-Since 1950, more than four in ten countries have fallen further behind the United States. Of the 145 countries with Maddison estimates for both 1950 and 2022, 63 had a lower GDP per person relative to the US in 2022 than in 1950. A few raced ahead: South Korea went from 6.5% of the US level (998 against 15,240 international dollars of 2011) to 70.6% (41,321 against 58,487), and Taiwan from 9.6% to 90.9%. In 1950 Ghana was richer per person than South Korea (1,788 against 998); by 2022 South Korea was 9.7 times richer (41,321 against 4,242), and Ghana had slipped from 11.7% of the US level to 7.3%. These are shares of the US level, not falls in absolute income: Ghana's GDP per person more than doubled over the period.
+Since 1950, more than four in ten countries have fallen further behind the United States. Of the 145 countries with Maddison estimates for both 1950 and 2022, 63 (including three former states; 63 of 142 without them) had a lower GDP per person relative to the US in 2022 than in 1950. A few raced ahead: South Korea went from 6.5% of the US level (998 against 15,240 international dollars of 2011) to 70.6% (41,321 against 58,487), and Taiwan from 9.6% to 90.9%. In 1950 Ghana was richer per person than South Korea (1,788 against 998); by 2022 South Korea was 9.7 times richer (41,321 against 4,242), and Ghana had slipped from 11.7% of the US level to 7.3%. These are shares of the US level, not falls in absolute income: Ghana's GDP per person more than doubled over the period.
 
 ## Data
 
@@ -12,7 +12,7 @@ Since 1950, more than four in ten countries have fallen further behind the Unite
 
 One row per country and year where the Maddison Project gives an estimate (23,280 rows).
 
-- `country_code`: three-letter code as used by the Maddison Project. These are ISO 3166-1 alpha-3 codes, plus three former states: `CSK` (Czechoslovakia), `SUN` (Former USSR) and `YUG` (Former Yugoslavia), which have estimates up to their break-up, while their successor states start later. `SDN` is Sudan before the 2011 split and `TZA` is mainland Tanzania.
+- `country_code`: three-letter code as used by the Maddison Project. These are ISO 3166-1 alpha-3 codes, plus three former states: `CSK` (Czechoslovakia), `SUN` (Former USSR) and `YUG` (Former Yugoslavia). `CSK`, `SUN` and `YUG` are former states, continued to 2022 as aggregates of their successor states, which have their own estimates only from 1952–1985. Do not sum across both or you will double count. `SDN` is the former Sudan, including present-day South Sudan, in every year and `TZA` is mainland Tanzania.
 - `country`: name as given by the Maddison Project.
 - `year`: before 1820 coverage is thin (14 countries have an estimate for year 1 and 21 for 1800), though a few European countries have long annual series; most countries are annual from 1950 (145 countries have every year 1950-2022).
 - `gdp_per_capita`: real GDP per person in 2011 international dollars, rounded to cents. Empty for years with a population estimate but no GDP estimate.

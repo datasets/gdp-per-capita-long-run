@@ -57,7 +57,7 @@
           {
             "name": "country_code",
             "type": "string",
-            "description": "Three-letter country code as used by the Maddison Project: ISO 3166-1 alpha-3, plus former states CSK (Czechoslovakia), SUN (Former USSR) and YUG (Former Yugoslavia). SDN is Sudan before the 2011 split and TZA is mainland Tanzania."
+            "description": "Three-letter country code as used by the Maddison Project: ISO 3166-1 alpha-3, plus former states CSK (Czechoslovakia), SUN (Former USSR) and YUG (Former Yugoslavia). CSK, SUN and YUG are former states, continued to 2022 as aggregates of their successor states, which have their own estimates only from 1952–1985. Do not sum across both or you will double count. SDN is the former Sudan, including present-day South Sudan, in every year and TZA is mainland Tanzania."
           },
           {
             "name": "country",
